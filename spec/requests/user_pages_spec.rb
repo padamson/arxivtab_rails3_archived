@@ -34,14 +34,6 @@ describe "User pages" do
 
       it { should_not have_link('delete') }
 
-      #describe "admin should not be able to delete himself" do
-        #let(:admin) { FactoryGirl.create(:admin) }
-        #before { sign_in admin, no_capybara: true }
-        #expect do 
-          #delete user_path(admin)
-        #end.not_to change(User, :count)
-      #end
-
       describe "as an admin user" do
         let(:admin) { FactoryGirl.create(:admin) }
         before do
@@ -58,7 +50,6 @@ describe "User pages" do
         it { should_not have_link('delete', href: user_path(admin)) }
       end
     end
-
   end
 
   describe "profile page" do
@@ -66,15 +57,43 @@ describe "User pages" do
     let!(:m1) { FactoryGirl.create(:micropost, user:user, content: "Foo") }
     let!(:m2) { FactoryGirl.create(:micropost, user:user, content: "Bar") }
 
-    before { visit user_path(user) }
+    before do 
+      sign_in user
+      visit user_path(user)
+    end
 
     it { should have_content(user.name) }
+    it { should have_content("Microposts (2)") }
     it { should have_title(user.name) }
+    it { should have_link('delete') }
 
     describe "microposts" do
       it { should have_content(m1.content) }
       it { should have_content(m2.content) }
       it { should have_content(user.microposts.count) }
+    end
+  end
+
+  describe "another profile page after signin" do
+    let(:user) { FactoryGirl.create(:user) }
+    let(:another_user) { FactoryGirl.create(:user, email: "another@example.com") }
+    let!(:m1) { FactoryGirl.create(:micropost, user:another_user, content: "Foo") }
+    let!(:m2) { FactoryGirl.create(:micropost, user:another_user, content: "Bar") }
+
+    before do 
+      sign_in user
+      visit user_path(another_user)
+    end
+
+    it { should have_content(another_user.name) }
+    it { should have_content("Microposts (2)") }
+    it { should have_title(another_user.name) }
+    it { should_not have_link('delete') }
+
+    describe "microposts" do
+      it { should have_content(m1.content) }
+      it { should have_content(m2.content) }
+      it { should have_content(another_user.microposts.count) }
     end
   end
 
