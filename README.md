@@ -1,6 +1,7 @@
-# Ruby on Rails Tutorial: sample application
+# arTab.org development
 
-This is the sample application for
+Extending the sample application from
 the [*Ruby on Rails Tutorial*](http://railstutorial.org/)
-by [Michael Hartl](http://michaelhartl.com/).
+by [Michael Hartl](http://michaelhartl.com/) to experiment
+with tabbing PDFs.
 
