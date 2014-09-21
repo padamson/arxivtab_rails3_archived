@@ -14,4 +14,9 @@ FactoryGirl.define do
     content "Lorem ipsum"
     user
   end
+
+  factory :doc do
+    url "http://www.example.org/example.pdf"
+    tabbed_at Time.current
+  end
 end

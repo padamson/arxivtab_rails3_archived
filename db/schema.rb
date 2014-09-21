@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140831013022) do
+ActiveRecord::Schema.define(version: 20140921055650) do
+
+  create_table "docs", force: true do |t|
+    t.string   "url"
+    t.datetime "tabbed_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "docs", ["tabbed_at"], name: "index_docs_on_tabbed_at"
 
   create_table "microposts", force: true do |t|
     t.string   "content"
