@@ -29,6 +29,19 @@
     <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
   </div>
 
-  <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+    <div class="center">
+      <object data="http://arxiv.org/pdf/1409.3016.pdf"
+              type="application/pdf"
+              width="100%"
+              height="100%">
+
+        <p>It appears you don't have a PDF plugin for this browser.
+          No biggie... you can <a href="http://arxiv.org/pdf/1409.3016.pdf">click here to
+          download the PDF file.</a></p>
+
+      </object>
+    </div>
+
+    <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
 <% end %>
 
