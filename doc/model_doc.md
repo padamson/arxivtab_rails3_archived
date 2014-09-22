@@ -101,4 +101,8 @@ We can get this to pass with a simple presence validation:
 
 **Listing** `app/models/doc.rb`
 
-
+    class Doc < ActiveRecord::Base
+      validates :url, presence: true
+    end
+    
+    
