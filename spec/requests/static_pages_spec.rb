@@ -46,6 +46,11 @@ describe "Static pages" do
         it { should have_link("0 following", href: following_user_path(user)) }
         it { should have_link("1 followers", href: followers_user_path(user)) }
       end
+
+      describe "click Add document button" do
+        before { click_button "Add document" }
+        it { should have_content('Add document') }
+      end
     end
   end
 
