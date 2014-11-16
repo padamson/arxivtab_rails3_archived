@@ -25,5 +25,7 @@ module Arxivtab
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+    #Rails Tutorial says to do the following but is default in Rails 4
+    #config.active record.whitelist attributes = true
   end
 end

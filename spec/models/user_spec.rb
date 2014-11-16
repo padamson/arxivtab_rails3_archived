@@ -37,6 +37,7 @@ describe User, type: :model do
   it { should respond_to(:followed_users) }
   it { should respond_to(:following?) }
   it { should respond_to(:follow!) }
+  it { should respond_to(:docs) }
 
   it { should be_valid }
   it { should_not be_admin }

@@ -1,3 +1,4 @@
 class Doc < ActiveRecord::Base
-  validates :url, presence: true
+  attr_accessible :url
+  validates :user_id, presence: true
 end

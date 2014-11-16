@@ -1,0 +1,7 @@
+<%= form_for(@doc) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_area :url, placeholder: "Add new document..." %>
+  </div>
+  <%= f.submit "Add document", class: "btn btn-large btn-primary" %>
+<% end %>

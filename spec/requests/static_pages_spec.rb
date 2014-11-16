@@ -47,10 +47,11 @@ describe "Static pages", type: :request do
         it { should have_link("1 followers", href: followers_user_path(user)) }
       end
 
-      describe "click Add document button" do
-        before { click_button "Add document" }
+      describe "should have Add document button" do
         it { should have_content('Add document') }
+        it { should have_link("Add document", href: docs_new_path()) }
       end
+
     end
   end
 

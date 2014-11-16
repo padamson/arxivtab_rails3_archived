@@ -2,10 +2,10 @@ class CreateDocs < ActiveRecord::Migration
   def change
     create_table :docs do |t|
       t.string :url
-      t.datetime :tabbed_at
+      t.integer :user_id
 
       t.timestamps
     end
-    add_index :docs, :tabbed_at
+    add_index :docs
   end
 end
