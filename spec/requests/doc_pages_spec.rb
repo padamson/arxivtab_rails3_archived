@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Doc pages" do
+describe "Doc pages", type: :request do
 
   subject { page }
 

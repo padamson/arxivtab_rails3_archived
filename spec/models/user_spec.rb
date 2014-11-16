@@ -14,7 +14,7 @@
 
 require 'spec_helper'
 
-describe User do
+describe User, type: :model do
 
   before do
     @user = User.new(name: "Example User", email: "user@example.com",
@@ -136,7 +136,7 @@ describe User do
       let(:user_for_invalid_password) { found_user.authenticate("invalid") }
 
       it { should_not eq user_for_invalid_password }
-      specify { expect(user_for_invalid_password).to be_false }
+      specify { expect(user_for_invalid_password).to be_falsey }
     end
   end
 

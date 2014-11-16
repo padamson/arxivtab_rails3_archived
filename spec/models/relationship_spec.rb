@@ -11,7 +11,7 @@
 
 require 'spec_helper'
 
-describe Relationship do
+describe Relationship, type: :model do
 
   let(:follower) { FactoryGirl.create(:user) }
   let(:followed) { FactoryGirl.create(:user) }

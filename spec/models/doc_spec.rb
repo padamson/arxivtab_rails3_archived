@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Doc do
+describe Doc, type: :model do
 
   before do
     # This code is wrong!

@@ -10,8 +10,9 @@ gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 
 group :development, :test do
-  gem 'sqlite3', '1.3.8'
-  gem 'rspec-rails', '~> 3.1'
+  gem 'sqlite3'
+  gem 'rspec-rails'
+  gem 'its'
   gem 'railroady'
   gem 'annotate', '~> 2.4.1.beta'
   # The following optional lines are part of the advanced setup.
